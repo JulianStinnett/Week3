@@ -86,10 +86,24 @@ public class GameGrid {
                 }
             }
         }
-        for(exit = true){
-        System.out.println(aiGrid[iUserRow][iUserCol]);
-            for(){
+        for (int y = 0; y < aiGrid.length; y++) {
+            for (int x = 0; x < aiGrid[y].length; x++) {
 
+                iTempNum = oRand.nextInt(100);
+
+                //use wall chance to decide whether wall or path here.
+
+                if (iTempNum < iWallChance) {
+                    aiGrid[y][x] = 1;
+                } else {
+                    aiGrid[y][x] = 0;
+                }
+                //aiGrid[y][x] = oRand.nextInt(2);
+
+                System.out.print(aiGrid[y][x] + "  ");
+            }
+            System.out.println();
+        }
             }
         }
     }
